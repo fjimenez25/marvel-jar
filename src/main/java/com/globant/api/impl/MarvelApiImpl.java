@@ -24,13 +24,8 @@ public class MarvelApiImpl implements MarvelApi{
 	@Override
 	public <T extends Class> ResponseEntity<?> call(T responseType, String url, HttpMethod method, HttpEntity<?> entity) {
 	
-		log.info("Call api with url {}", (url));
-		
-		ResponseEntity<T> responseEntity;
-	
-		responseEntity = restTemplate.exchange(url, method, entity, responseType);
-					
-		return responseEntity;
+		log.info("Call api with url {}", (url));		
+		return restTemplate.exchange(url, method, entity, responseType);
 	}
 
 }
